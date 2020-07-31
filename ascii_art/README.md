@@ -55,10 +55,6 @@ PIP3 Pakete:
 - `cowsay` (für sprechende ASCII Charaktere)
 - `inquirer` (für Benutzerabfragen)
 
-Um ASCII Bilder zu generieren, wird die Python Bibliothek 'pyfiglet' verwendet. Sie kann mit `pip3 install pyfiglet` installiert werden.
-
-Oder das requirements.txt kann verwendet werden:
-
 ```sh
-pip3 install -r requirements.txt
+pip3 install pyfiglet cowsay inquirer
 ```
