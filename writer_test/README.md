@@ -14,7 +14,7 @@ PIP3 Pakete:
 
 
 ```sh
-pip3 install pynput
+pip3 install --user pynput
 ```
 
 !! Unter OSX muss nach dem ersten Start dem Terminal die Berechtigung fürs Abfragen der Tastenanschläge gegeben werden: `Systemeinstellungen > Sicherheit > Datenschutz > Input-Monitoring` das Häkchen bei `Terminal` setzen.
