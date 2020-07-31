@@ -16,5 +16,5 @@ PIP3 Pakete:
 
 
 ```sh
-pip3 install gTTS playsound
+pip3 install --user gTTS playsound
 ```

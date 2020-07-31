@@ -14,7 +14,11 @@ error_count = 0
 
 def get_stats():
     global last_keystroke_time, error_count, input_characters
-    duration = (last_keystroke_time - start_time) / 60
+    duration = (last_keystroke_time - start_time) / 60.0
+
+    if duration == 0:
+        duration = 1
+
     keystroke_count = len(input_characters)
     stats = f'Tastenanschläge/Minute: {keystroke_count / duration}'
     return stats

@@ -56,5 +56,5 @@ PIP3 Pakete:
 - `inquirer` (für Benutzerabfragen)
 
 ```sh
-pip3 install pyfiglet cowsay inquirer
+pip3 install --user pyfiglet cowsay inquirer
 ```
