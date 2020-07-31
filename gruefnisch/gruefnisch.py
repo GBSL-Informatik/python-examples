@@ -3,6 +3,7 @@ from playsound import playsound
 
 
 def to_gruefnisch(text: str):
+    text = text.lower()
     text = text.replace('a', 'anafa')
     text = text.replace('e', 'enefe')
     text = text.replace('i', 'inifi')
@@ -15,6 +16,7 @@ def to_gruefnisch(text: str):
 
 
 def from_gruefnisch(text: str):
+    text = text.lower()
     text = text.replace('anafa', 'a')
     text = text.replace('enefe', 'e')
     text = text.replace('inifi', 'i')
@@ -42,8 +44,8 @@ def what_to_do():
     print('(x) Programm beenden')
     print()
 
-    answer = input('Auswahl (a, b, c, d): ')
-    selection = str.lower(str.strip(answer))
+    answer = input('Auswahl (a, b, c, d, x): ')
+    selection = answer.lower().strip()
     if selection not in ['a', 'b', 'c', 'd', 'x']:
         print(f"!!! Selektierte Option '{selection}' nicht erkannt\n\n")
         return what_to_do()
