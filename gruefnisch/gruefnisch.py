@@ -30,8 +30,8 @@ def from_gruefnisch(text: str):
 
 def speak(text: str):
     myobj = gTTS(text=text, lang='de', slow=False)
-    myobj.save("speak_out.mp3")
-    playsound("speak_out.mp3")
+    myobj.save('speak_out.mp3')
+    playsound('speak_out.mp3')
 
 
 def what_to_do():
