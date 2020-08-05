@@ -3,7 +3,7 @@ from smartphone_connector import Connector
 import time, webbrowser
 
 # visit https://io.balthasarhofer.ch/controller?deviceId=FooBar
-webbrowser.open_new_tab('https://io.balthasarhofer.ch/controller?deviceId=FooBar')
+# webbrowser.open_new_tab('https://io.balthasarhofer.ch/controller?deviceId=FooBar')
 
 jack = Turtle()
 screen: _Screen = jack.screen
@@ -21,6 +21,7 @@ def on_key(data):
             jack.backward(10)
         screen.update()
 
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.balthasarhofer.ch', 'Simon')
+connector.onKey = on_key
 screen.mainloop()
 connector.disconnect()
