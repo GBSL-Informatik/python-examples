@@ -34,7 +34,7 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
     {
         'deviceId': 'FooBar',
         'deviceNr': 0,
-        'timeStamp': 1596731613793, # zeit seit 1.1.1970 in ms
+        'timeStamp': 1596731613.793, # zeit seit 1.1.1970 in Sekunden
         'type': 'key',
         'key': 'up' | 'right' |'down' |'left' | 'home'
     }
@@ -47,7 +47,7 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
     {
         'deviceId': 'FooBar',
         'deviceNr': 0,
-        'timeStamp': 1596731613793,
+        'timeStamp': 1596731613.793,
         'type': 'acceleration',
         'acceleration': {
             'x': 0.0,
@@ -64,7 +64,7 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
     {
         'deviceId': 'FooBar',
         'deviceNr': 0,
-        'timeStamp': 1596731613793,
+        'timeStamp': 1596731613.793,
         'type': 'gyro',
         'acceleration': {
             'alpha': 0.0,   # zwischen 0 and 360 grad
@@ -75,12 +75,26 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
     }
     ```
 
+#### Helfer Funktionen
+
+Um den Zeitstempel eines Datenpakets (in Sekunden oder Millisekunden seit 1.1.1970) als Datum mit Zeit (`datetime`) zu erhalten, gibt es eine Helferfunktion, welche
+aus einem Paket den Zeitstempel ausliest und diesen als `datetime` zurückgibt: `to_datetime(pkg)`
+
+```py
+from smartphone_connector import to_datetime
+# timestamp given in seconds since epoche
+print(to_datetime({'timeStamp': 1596731613.793})) # => 2020-08-06 18:33:33.793000
+# timestamp given in milliseconds since epoche
+print(to_datetime({'timeStamp': 1596731613793})) # => 2020-08-06 18:33:33.793000
+```
+
 ##### Beispiele
 
 Definition einer Callback Funktion:
 ```py
-def on_key(key):
-    print('key: ', key)
+from smartphone_connector import Connector, to_datetime
+def on_key(data):
+    print(f'time: {to_datetime(data)}, key: {data['key']}')
 
 connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
 connector.on_key = on_key
@@ -130,7 +144,7 @@ Beim berühren oder Klicken auf dem farbigen Bildschirmteil wird ein `new_data` 
     {
         'deviceId': 'FooBar',
         'deviceNr': 0,
-        'timeStamp': 1596731613793,
+        'timeStamp': 1596731613.793,
         'type': 'pointer',
         'pointer': {
             'context': 'color',
@@ -180,7 +194,7 @@ Beim berühren oder Klicken eines Quadrats ein `new_data` Event an den socket.io
     {
         'deviceId': 'FooBar',
         'deviceNr': 0,
-        'timeStamp': 1596731613793,
+        'timeStamp': 1596731613.793,
         'type': 'pointer',
         'pointer': {
             'context': 'grid',
