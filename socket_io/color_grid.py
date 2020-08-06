@@ -1,11 +1,9 @@
 from smartphone_connector import Connector
 import time, webbrowser
-# URL = 'https://io.balthasarhofer.ch'
-URL = 'http://localhost:5000'
+URL = 'https://io.balthasarhofer.ch'
 # visit https://io.balthasarhofer.ch/color_grid?deviceId=FooBar
-# webbrowser.open_new_tab(f'{URL}/color_grid?deviceId=FooBar')
 
-def getCheckerBoard(first_white = True):
+def get_checker_board(first_white = True):
     board = []
     for i in range(0, 8):
         start_white = i % 2 == 0
@@ -20,9 +18,9 @@ def getCheckerBoard(first_white = True):
     return board
 
 connector = Connector(URL, 'FooBar')
-for i in range(0, 1):
+for i in range(0, 10):
     for start_white in [True, False]:
-        connector.set_grid(getCheckerBoard(start_white))
+        connector.set_grid(get_checker_board(start_white))
         print('set checker board')
         time.sleep(0.5)
 connector.disconnect()

@@ -13,24 +13,13 @@ connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
 
 lastTimeStamp = 0
 
-def lastData():
-    global connector, lastTimeStamp
-    if 'FooBar' not in connector.data:
-        return None
-    data = connector.data['FooBar']
-    for df in reversed(data):
-        if 'type' in df and df.type == 'sensor':
-            return df
-
-    return None
-
-def turtleStep():
-    global lastTimeStamp, jack, screen
-    data = lastData()
+def turtle_step():
+    global lastTimeStamp, jack, screen, connector
+    data = connector.latest_data(data_type='acceleration')
     if data is None:
         return
-    lastTimeStamp = data.timeStamp
-    accX = data.sensor['x']
+    lastTimeStamp = data['timeStamp']
+    accX = data['acceleration']['x']
     
     step_size = 2
     angle = 0
@@ -47,7 +36,7 @@ def turtleStep():
 try:
     while True:
         time.sleep(0.01)
-        turtleStep()
+        turtle_step()
 
 finally:
     connector.disconnect()

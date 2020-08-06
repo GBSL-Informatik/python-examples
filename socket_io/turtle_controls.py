@@ -21,6 +21,6 @@ def on_key(data):
         screen.update()
 
 connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
-connector.onKey = on_key
+connector.on_key = on_key
 screen.mainloop()
 connector.disconnect()

@@ -1,1 +1,1 @@
-smartphone-connector>=0.0.2
+smartphone-connector>=0.0.3

@@ -1,8 +1,7 @@
 from smartphone_connector import Connector
-import time, webbrowser
+import time
 
 # visit https://io.balthasarhofer.ch/color_panel?deviceId=FooBar
-webbrowser.open_new_tab('https://io.balthasarhofer.ch/controller?deviceId=FooBar')
 connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
 for color in ['red', 'green', 'blue']:
     print('set color: ', color)
