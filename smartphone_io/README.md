@@ -32,9 +32,9 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
   - Format eines Datenpakets:
     ```py
     {
-        'deviceId': 'FooBar',
-        'deviceNr': 0,
-        'timeStamp': 1596731613.793, # zeit seit 1.1.1970 in Sekunden
+        'device_id': 'FooBar',
+        'device_nr': 0,
+        'time_stamp': 1596731613.793, # zeit seit 1.1.1970 in Sekunden
         'type': 'key',
         'key': 'up' | 'right' |'down' |'left' | 'home'
     }
@@ -45,9 +45,9 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
   - Format eines Datenpakets:
     ```py
     {
-        'deviceId': 'FooBar',
-        'deviceNr': 0,
-        'timeStamp': 1596731613.793,
+        'device_id': 'FooBar',
+        'device_nr': 0,
+        'time_stamp': 1596731613.793,
         'type': 'acceleration',
         'acceleration': {
             'x': 0.0,
@@ -62,9 +62,9 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
   - Format eines Datenpakets:
     ```py
     {
-        'deviceId': 'FooBar',
-        'deviceNr': 0,
-        'timeStamp': 1596731613.793,
+        'device_id': 'FooBar',
+        'device_nr': 0,
+        'time_stamp': 1596731613.793,
         'type': 'gyro',
         'acceleration': {
             'alpha': 0.0,   # zwischen 0 and 360 grad
@@ -82,10 +82,10 @@ aus einem Paket den Zeitstempel ausliest und diesen als `datetime` zurückgibt: 
 
 ```py
 from smartphone_connector import to_datetime
-# timestamp given in seconds since epoche
-print(to_datetime({'timeStamp': 1596731613.793})) # => 2020-08-06 18:33:33.793000
-# timestamp given in milliseconds since epoche
-print(to_datetime({'timeStamp': 1596731613793})) # => 2020-08-06 18:33:33.793000
+# time_stamp given in seconds since epoche
+print(to_datetime({'time_stamp': 1596731613.793})) # => 2020-08-06 18:33:33.793000
+# time_stamp given in milliseconds since epoche
+print(to_datetime({'time_stamp': 1596731613793})) # => 2020-08-06 18:33:33.793000
 ```
 
 ##### Beispiele
@@ -142,9 +142,9 @@ Beim berühren oder Klicken auf dem farbigen Bildschirmteil wird ein `new_data` 
   - Format eines Datenpakets:
     ```py
     {
-        'deviceId': 'FooBar',
-        'deviceNr': 0,
-        'timeStamp': 1596731613.793,
+        'device_id': 'FooBar',
+        'device_nr': 0,
+        'time_stamp': 1596731613.793,
         'type': 'pointer',
         'pointer': {
             'context': 'color',
@@ -192,9 +192,9 @@ Beim berühren oder Klicken eines Quadrats ein `new_data` Event an den socket.io
   - Format eines Datenpakets:
     ```py
     {
-        'deviceId': 'FooBar',
-        'deviceNr': 0,
-        'timeStamp': 1596731613.793,
+        'device_id': 'FooBar',
+        'device_nr': 0,
+        'time_stamp': 1596731613.793,
         'type': 'pointer',
         'pointer': {
             'context': 'grid',
