@@ -1,4 +1,4 @@
-from smartphone_connector import Connector, random_color, PointerMsg
+from smartphone_connector import Connector, random_color, GridPointer
 import random
 
 connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
@@ -10,10 +10,9 @@ for _ in range(0, 9):
         row.append(random_color())
     grid.append(row)
 
-def on_pointer(data: PointerMsg, connector: Connector):
+def on_pointer(data: GridPointer, connector: Connector):
     global grid
-    pointer = data['pointer']
-    grid[pointer['row']][pointer['column']] = random_color()
+    grid[data.row][data.column] = random_color()
     connector.set_grid(grid)
 
 connector.on_pointer = on_pointer

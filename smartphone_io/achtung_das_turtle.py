@@ -19,17 +19,16 @@ def on_key(data):
 
 connector.on_key = on_key
 
-def turtle_step(jack: Turtle, connector):
-    data = connector.latest_data(data_type='acceleration')
+def turtle_step(jack: Turtle, connector: Connector):
+    data = connector.latest_acceleration()
     if data is None:
         return
-    accX = data['acceleration']['x']
     
     step_size = 2
     angle = 0
-    if accX > 1:
+    if data.x > 1:
         angle = step_size
-    elif accX < -1:
+    elif data.x < -1:
         angle = -step_size
 
     jack.left(angle)
@@ -38,10 +37,13 @@ def turtle_step(jack: Turtle, connector):
     jack.screen.update()
 
 
-while True:
-    time.sleep(0.01)
-    if go_home:
-        jack.home()
-        jack.screen.update()
-        go_home = False
-    turtle_step(jack, connector)
+try:
+    while True:
+        time.sleep(0.01)
+        if go_home:
+            jack.home()
+            jack.screen.update()
+            go_home = False
+        turtle_step(jack, connector)
+except:
+    pass

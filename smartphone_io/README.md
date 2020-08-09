@@ -49,12 +49,10 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
         'device_nr': 0,
         'time_stamp': 1596731613.793,
         'type': 'acceleration',
-        'acceleration': {
-            'x': 0.0,
-            'y': 0.0,
-            'z': -9.81,
-            'interval': 32 # Zeitintervall (ms) zwischen Sensormessungen
-        }
+        'x': 0.0,
+        'y': 0.0,
+        'z': -9.81,
+        'interval': 32 # Zeitintervall (ms) zwischen Sensormessungen
     }
     ```
 - Gyro (falls im Smartphone vorhanden, sonst kann das Event simuliert werden)
@@ -66,12 +64,10 @@ Verschickt `new_data` Events an den socket.io Server und können über den smart
         'device_nr': 0,
         'time_stamp': 1596731613.793,
         'type': 'gyro',
-        'acceleration': {
-            'alpha': 0.0,   # zwischen 0 and 360 grad
-            'beta': 0.0,    # zwischen -180 and 180 grad
-            'gamma': 0.0,   # zwischen -90 and 90 grad
-            'absolute': False # ob die winkel absolut oder relative gemessen wurden
-        }
+        'alpha': 0.0,   # zwischen 0 and 360 grad
+        'beta': 0.0,    # zwischen -180 and 180 grad
+        'gamma': 0.0,   # zwischen -90 and 90 grad
+        'absolute': False # ob die winkel absolut oder relative gemessen wurden
     }
     ```
 
@@ -146,14 +142,12 @@ Beim berühren oder Klicken auf dem farbigen Bildschirmteil wird ein `new_data` 
         'device_nr': 0,
         'time_stamp': 1596731613.793,
         'type': 'pointer',
-        'pointer': {
-            'context': 'color',
-            'x': 0, # position des klicks, 0 ist ganz links, <width> ist ganz rechts
-            'y': 0, # position des klicks, 0 ist ganz oben, <height> ist ganz unten
-            'width': 500,
-            'height': 700,
-            'color': 'yellow' # aktuell angezeigte Farbe
-        }
+        'context': 'color',
+        'x': 0, # position des klicks, 0 ist ganz links, <width> ist ganz rechts
+        'y': 0, # position des klicks, 0 ist ganz oben, <height> ist ganz unten
+        'width': 500,
+        'height': 700,
+        'color': 'yellow' # aktuell angezeigte Farbe
     }
     ```
 
@@ -196,12 +190,10 @@ Beim berühren oder Klicken eines Quadrats ein `new_data` Event an den socket.io
         'device_nr': 0,
         'time_stamp': 1596731613.793,
         'type': 'pointer',
-        'pointer': {
-            'context': 'grid',
-            'row': 0,     # Zeilen-Index des geklickten Quadrats
-            'column': 0,  # Spalten-Index des geklickten Quadrats
-            'color': 'teal' # farbe des geklickten quadrats
-        }
+        'context': 'grid',
+        'row': 0,     # Zeilen-Index des geklickten Quadrats
+        'column': 0,  # Spalten-Index des geklickten Quadrats
+        'color': 'teal' # farbe des geklickten quadrats
     }
     ```
 
