@@ -2,7 +2,7 @@
 
 Nutze dein Smartphone als Controller oder als Anzeigegrät. Benutzt [https://io.balthasarhofer.ch](https://io.balthasarhofer.ch) um Daten vom und ans Smartphone zu schicken.
 
-Beispiel: Steuere ein Turtle im "AChtung die Kruve" Stil:
+Beispiel: Steuere ein Turtle im "Achtung die Kruve" Stil:
 
 ![Achtung das Turtle](./achtung_das_turtle.gif)
 
