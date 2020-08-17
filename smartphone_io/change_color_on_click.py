@@ -1,7 +1,7 @@
 from smartphone_connector import Connector, random_color
 import random
 
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 
 def on_pointer(data, connector: Connector):
     connector.set_color(random_color())

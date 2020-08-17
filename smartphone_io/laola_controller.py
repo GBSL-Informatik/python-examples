@@ -1,5 +1,5 @@
 from smartphone_connector import Connector
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 
 def blink(device_nr: int, connector: Connector):
     connector.set_color('red', unicast_to=device_nr)

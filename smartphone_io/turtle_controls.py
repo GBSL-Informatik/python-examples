@@ -2,7 +2,7 @@ from turtle import Turtle, Screen, _Screen
 from smartphone_connector import Connector, KeyMsg
 import time
 
-# visit https://io.balthasarhofer.ch/controller?device_id=FooBar
+# visit https://io.gbsl.website/controller?device_id=FooBar
 
 jack = Turtle()
 screen: _Screen = jack.screen
@@ -18,7 +18,7 @@ def on_key(data: KeyMsg):
         jack.backward(10)
     screen.update()
 
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 connector.on_key = on_key
 screen.mainloop()
 connector.disconnect()

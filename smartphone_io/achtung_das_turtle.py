@@ -2,14 +2,14 @@ from turtle import Turtle, Screen, _Screen
 from smartphone_connector import Connector
 import time
 
-# visit https://io.balthasarhofer.ch/controller?device_id=FooBar
+# visit https://io.gbsl.website/controller?device_id=FooBar
 
 jack = Turtle()
 jack.speed(0)
 screen: _Screen = jack.screen
 screen.tracer(0, 0)
 doing = False
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 go_home = False
 
 def on_key(data):

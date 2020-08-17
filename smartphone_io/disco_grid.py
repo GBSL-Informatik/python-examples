@@ -1,11 +1,11 @@
 from smartphone_connector import Connector, random_color
 import random
 
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 
 while True:
-    columns = random.randint(1, 10)
-    rows = random.randint(1, 10)
+    columns = random.randint(50, 100)
+    rows = random.randint(50, 100)
     grid = []
     for _ in range(0, rows):
         row = []
