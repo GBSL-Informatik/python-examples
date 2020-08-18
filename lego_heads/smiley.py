@@ -1,20 +1,20 @@
 from gbsl_turtle import *
 
-# Turtle Heading: ->
+# Ausrichtung: ->
 
 left(18)
 for n in range(10):
-    forward(80)
+    forward(70)
     left(36)
 
 
-goto(-50, 160, draw=False)
+goto(-50, 150, draw=False)
 for n in range(10):
     forward(10)
     left(36)
 
 
-goto(50, 160, draw=False)
+goto(50, 150, draw=False)
 for n in range(10):
     forward(10)
     left(36)
