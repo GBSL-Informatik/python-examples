@@ -1,31 +1,36 @@
 from gbsl_turtle import *
 
-def rectangle(width: int, height: int=None):
-    if height is None:
-        height = width
+
+def rectangle(width: int, height: int):
     for n in range(2):
         forward(width)
-        left(90)
+        left()
         forward(height)
-        left(90)
+        left()
+
+
+def square(width: int):
+    rectangle(width, width)
+
 
 def step_down():
-    right(90)
+    right()
     forward(10)
-    left(90)
+    left()
     forward(10)
 
 
 def step_up():
     forward(10)
-    left(90)
+    left()
     forward(10)
-    right(90)
+    right()
 
-rectangle(120)
+
+square(120)
 
 goto(20, 80, draw=False)
-rectangle(20)
+square(20)
 
 goto(70, 90, draw=False)
 rectangle(40, 10)

@@ -3,21 +3,21 @@ from gbsl_turtle import *
 def square(width: int):
     for n in range(4):
         forward(width)
-        left(90)
+        left()
 
 
 def step_down():
-    right(90)
+    right()
     forward(10)
-    left(90)
+    left()
     forward(10)
 
 
 def step_up():
     forward(10)
-    left(90)
+    left()
     forward(10)
-    right(90)
+    right()
 
 
 square(120)
