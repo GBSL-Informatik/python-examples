@@ -1,7 +1,7 @@
 from smartphone_connector import Connector
 import time
-URL = 'https://io.balthasarhofer.ch'
-# visit https://io.balthasarhofer.ch/color_grid?device_id=FooBar
+URL = 'https://io.gbsl.website'
+# visit https://io.gbsl.website/color_grid?device_id=FooBar
 
 def get_checker_board(first_white = True, size=8):
     board = []

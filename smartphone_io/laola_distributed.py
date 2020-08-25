@@ -6,7 +6,7 @@
 
 # %%
 from smartphone_connector import Connector, random_color, Device
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 
 
 def blink(device: Device, color: str, connector: Connector):

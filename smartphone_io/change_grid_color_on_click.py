@@ -1,7 +1,7 @@
 from smartphone_connector import Connector, random_color, GridPointer
 import random
 
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 
 grid = []
 for _ in range(0, 9):

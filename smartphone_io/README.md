@@ -1,6 +1,6 @@
 # Socket IO
 
-Nutze dein Smartphone als Controller oder als Anzeigegrät. Benutzt [https://io.balthasarhofer.ch](https://io.balthasarhofer.ch) um Daten vom und ans Smartphone zu schicken.
+Nutze dein Smartphone als Controller oder als Anzeigegrät. Benutzt [https://io.gbsl.website](https://io.gbsl.website) um Daten vom und ans Smartphone zu schicken.
 
 Beispiel: Steuere ein Turtle im "Achtung die Kruve" Stil:
 
@@ -11,9 +11,9 @@ Um eine Verbindung zum Smartphone aufzubauen, muss das pip paket [smartphone-con
 ```py
 from smartphone_connector import Connector
 
-#                          url socketio server       device id (auf dem Smartphone eintippen)
-#                                   ↓                    ↓
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+#                  url socketio server       device id (auf dem Smartphone eintippen)
+#                             ↓                    ↓
+connector = Connector('https://io.gbsl.website', 'FooBar')
 ```
 
 Aktuell gibt es 4 verschiedene Screens mit unterschiedlichen Anzeigen und Controls auf dem Smartphone:
@@ -92,7 +92,7 @@ from smartphone_connector import Connector, to_datetime
 def on_key(data):
     print(f'time: {to_datetime(data)}, key: {data['key']}')
 
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 connector.on_key = on_key
 ## oder mit lambda
 connector.on_key = lambda key: print(key)
@@ -103,7 +103,7 @@ connector.sio.wait()
 Es können jeweils auch die zuletzt erhaltenen Werte, oder alle erhaltenen Werte als Liste abgefragt werden:
 
 ```py
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 time.sleep(1)
 
 # zuletzt erhaltenes Datenpaket
@@ -125,7 +125,7 @@ Die Farbe des Color-Panels kann über ein Python Skript gesteuert werden:
 
 ```py
 from smartphone_connector import Connector
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 connector.set_color('red')                      # standardfarbe
 connector.set_color('#00ff00')                  # hex farbe: 'grün'
 connector.set_color('rgb(0, 0, 255)')           # rgb farbe: 'blau'
@@ -159,7 +159,7 @@ Die Anzahl Felder und ihre Farben können über ein Python Skript gesteuert werd
 
 ```py
 from smartphone_connector import Connector
-connector = Connector('https://io.balthasarhofer.ch', 'FooBar')
+connector = Connector('https://io.gbsl.website', 'FooBar')
 
 # zeige eine einzelne Zeile mit 4 Qudraten an:
 connector.set_grid(['red', 'green', 'blue', 'black'])
