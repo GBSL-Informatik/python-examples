@@ -15,6 +15,6 @@ gruefnisch = gruefnisch.replace('ü', 'ünüfü')
 
 print(gruefnisch)
 
-spoken_text = gTTS(text=text, lang='de', slow=False)
+spoken_text = gTTS(text=gruefnisch, lang='de', slow=False)
 spoken_text.save('speak_out.mp3')
 playsound('speak_out.mp3')
