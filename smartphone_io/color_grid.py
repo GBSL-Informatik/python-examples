@@ -3,7 +3,8 @@ import time
 URL = 'https://io.gbsl.website'
 # visit https://io.gbsl.website/color_grid?device_id=FooBar
 
-def get_checker_board(first_white = True, size=8):
+
+def get_checker_board(first_white=True, size=8):
     board = []
     size2 = size // 2
     for _ in range(0, size2):
@@ -14,10 +15,11 @@ def get_checker_board(first_white = True, size=8):
         board.reverse()
     return board
 
-connector = Connector(URL, 'FooBar')
+
+phone = Connector(URL, 'FooBar')
 for i in range(0, 10):
     for start_white in [True, False]:
-        connector.set_grid(get_checker_board(start_white, size=32))
+        phone.set_grid(get_checker_board(start_white, size=32))
         print('set checker board')
         time.sleep(0.5)
-connector.disconnect()
+phone.disconnect()

@@ -1,7 +1,7 @@
 from smartphone_connector import Connector, random_color
 import random
 
-connector = Connector('https://io.gbsl.website', 'FooBar')
+phone = Connector('https://io.gbsl.website', 'FooBar')
 
 while True:
     columns = random.randint(50, 100)
@@ -12,5 +12,5 @@ while True:
         for _ in range(0, columns):
             row.append(random_color())
         grid.append(row)
-    connector.set_grid(grid)
-    connector.sleep(0.75)
+    phone.set_grid(grid)
+    phone.sleep(0.75)

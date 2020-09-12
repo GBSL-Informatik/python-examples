@@ -1,15 +1,16 @@
 from smartphone_connector import Connector
-connector = Connector('https://io.gbsl.website', 'FooBar')
-
-def blink(device_nr: int, connector: Connector):
-    connector.set_color('red', unicast_to=device_nr)
-    connector.sleep(1)
-    connector.set_color('black', unicast_to=device_nr)
+phone = Connector('https://io.gbsl.website', 'FooBar')
 
 
-connector.set_color('black', broadcast=True)
+def blink(device_nr: int, phone: Connector):
+    phone.set_color('red', unicast_to=device_nr)
+    phone.sleep(1)
+    phone.set_color('black', unicast_to=device_nr)
+
+
+phone.set_color('black', broadcast=True)
 while True:
-    for device in connector.client_devices:
-        blink(device['device_nr'], connector)
+    for device in phone.client_devices:
+        blink(device['device_nr'], phone)
 
-connector.wait()
+phone.wait()

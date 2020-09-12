@@ -6,23 +6,23 @@
 
 # %%
 from smartphone_connector import Connector, random_color, Device
-connector = Connector('https://io.gbsl.website', 'FooBar')
+phone = Connector('https://io.gbsl.website', 'FooBar')
 
 
-def blink(device: Device, color: str, connector: Connector):
-    connector.set_color(color)
-    connector.sleep(1)
-    connector.set_color('black')
+def blink(device: Device, color: str, phone: Connector):
+    phone.set_color(color)
+    phone.sleep(1)
+    phone.set_color('black')
 
-    connector.broadcast({
+    phone.broadcast({
         'type': 'next_nr',
         'next_nr': device.device_nr + 1,
         'color': color
     })
 
 
-def on_data(data, connector: Connector):
-    device = connector.client_device
+def on_data(data, phone: Connector):
+    device = phone.client_device
     if device is None:
         return
 
@@ -31,15 +31,15 @@ def on_data(data, connector: Connector):
         # # zusatz: handys im kreis, und die farbe im Kreis ringsumgeben...
         # # --> erstes gerät muss auch auf "letzte" nummer hören!
         # is_first = device.device_nr == 0
-        # is_my_turn = data.next_nr == device.device_nr or (is_first and data.next_nr == connector.client_count)
+        # is_my_turn = data.next_nr == device.device_nr or (is_first and data.next_nr == phone.client_count)
 
         is_my_turn = data.next_nr == device.device_nr
         if is_my_turn:
-            blink(device, data.color, connector)
+            blink(device, data.color, phone)
     if data.type == 'pointer':
-        blink(device, random_color(), connector)
+        blink(device, random_color(), phone)
 
 
-connector.on_data = on_data
-connector.set_color('black', broadcast=True)
-connector.wait()
+phone.on_data = on_data
+phone.set_color('black', broadcast=True)
+phone.wait()

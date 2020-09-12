@@ -1,1 +1,1 @@
-smartphone-connector>=0.0.19
+smartphone-phone>=0.0.42

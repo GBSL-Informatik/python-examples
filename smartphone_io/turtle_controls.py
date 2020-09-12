@@ -1,11 +1,9 @@
 from gbsl_turtle import *
-from smartphone_connector import Connector, KeyMsg
-import time
-
-# visit https://io.gbsl.website/controller?device_id=FooBar
+from smartphone_connector import *
 
 
 def on_key(data: KeyMsg):
+    print(data.key)
     if data.key == 'up':
         forward()
     elif data.key == 'right':
@@ -16,7 +14,9 @@ def on_key(data: KeyMsg):
         backward()
     Screen().update()
 
-connector = Connector('https://io.gbsl.website', 'FooBar')
-connector.on_key = on_key
+
+phone = Connector('https://io.gbsl.website', 'FooBar')
+phone.on_key = on_key
+
 Screen().mainloop()
-connector.disconnect()
+phone.disconnect()

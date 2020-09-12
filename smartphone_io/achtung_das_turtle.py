@@ -9,21 +9,24 @@ jack.speed(0)
 screen: _Screen = jack.screen
 screen.tracer(0, 0)
 doing = False
-connector = Connector('https://io.gbsl.website', 'FooBar')
+phone = Connector('https://io.gbsl.website', 'FooBar')
 go_home = False
+
 
 def on_key(data):
     global go_home
     if data['key'] == 'home':
         go_home = True
 
-connector.on_key = on_key
 
-def turtle_step(jack: Turtle, connector: Connector):
-    data = connector.latest_acceleration()
+phone.on_key = on_key
+
+
+def turtle_step(jack: Turtle, phone: Connector):
+    data = phone.latest_acceleration()
     if data is None:
         return
-    
+
     step_size = 2
     angle = 0
     if data.x > 1:
@@ -44,6 +47,6 @@ try:
             jack.home()
             jack.screen.update()
             go_home = False
-        turtle_step(jack, connector)
+        turtle_step(jack, phone)
 except:
     pass

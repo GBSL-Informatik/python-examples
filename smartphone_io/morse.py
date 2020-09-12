@@ -48,24 +48,24 @@ def translate(text: str):
     return morsed
 
 
-connector = Connector('https://io.gbsl.website', 'FooBar')
+phone = Connector('https://io.gbsl.website', 'FooBar')
 
 codes = translate('Hallo Schatz')
 
 for code in codes:
     print(code)
     if code == '.':
-        connector.set_color('red')
-        connector.sleep(0.5)
-        connector.set_color('black')
-        connector.sleep(0.5)
+        phone.set_color('red')
+        phone.sleep(0.5)
+        phone.set_color('black')
+        phone.sleep(0.5)
     if code == '-':
-        connector.set_color('red')
-        connector.sleep(1.5)
-        connector.set_color('black')
-        connector.sleep(0.5)
+        phone.set_color('red')
+        phone.sleep(1.5)
+        phone.set_color('black')
+        phone.sleep(0.5)
     if code == ' ':
-        connector.set_color('pink')
-        connector.sleep(2)
-        connector.set_color('black')
-        connector.sleep(0.5)
+        phone.set_color('pink')
+        phone.sleep(2)
+        phone.set_color('black')
+        phone.sleep(0.5)
