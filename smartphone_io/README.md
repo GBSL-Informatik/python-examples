@@ -87,7 +87,14 @@ print(to_datetime({'time_stamp': 1596731613.793})) # => 2020-08-06 18:33:33.7930
 print(to_datetime({'time_stamp': 1596731613793})) # => 2020-08-06 18:33:33.793000
 ```
 
-##### Beispiele
+### Beispiele
+
+#### Rotierende Sprachzüge
+
+![draw cycling names](draw_cycling_name.gif)
+[draw_cycling_name.py](draw_cycling_name.py)
+
+#### Callback Funktionen
 
 Definition einer Callback Funktion:
 
